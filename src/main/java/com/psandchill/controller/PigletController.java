@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController(value = "piglets")
+@RestController
 public class PigletController {
 
     @Autowired
     private PigletRepository pigletRepository;
 
-    @GetMapping
+    @GetMapping(value = "piglets")
     public Iterable<Piglet> findPiglets(){
         return pigletRepository.findAll();
     }
